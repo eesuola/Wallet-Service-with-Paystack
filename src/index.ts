@@ -2,12 +2,14 @@ import "reflect-metadata";
 import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
+import swaggerUi from "swagger-ui-express";
 import { connectDB } from "./config/db";
 import passport from "./config/passport";
 import authRoutes from "./routes/authRoutes";
 import walletRoutes from "./routes/walletRoutes";
 import webhookRoutes from "./routes/webhookRoutes";
 import apiKeyRoutes from "./routes/apiKeyRoutes";
+import { specs } from "./swagger";
 
 dotenv.config();
 
@@ -32,12 +34,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Swagger Documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+
 // Routes
 app.use("/auth", authRoutes);
 app.use("/wallet", walletRoutes);
 app.use("/wallet", webhookRoutes);
 app.use("/keys", apiKeyRoutes);
-
 
 app.get("/", (req, res) => {
   res.json({ message: "Wallet Service API" });
