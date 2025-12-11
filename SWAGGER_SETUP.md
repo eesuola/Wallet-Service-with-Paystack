@@ -7,7 +7,7 @@ Your Wallet Service API now has interactive Swagger/OpenAPI documentation!
 Once the server is running, visit:
 
 ```
-https://wallet-service-with-paystack.onrender.com/api-docs
+http://localhost:3030/api-docs
 ```
 
 ## What You Get
@@ -41,7 +41,7 @@ Start your development server:
 npm run dev
 ```
 
-Then navigate to `https://wallet-service-with-paystack.onrender.com/api-docs` in your browser.
+Then navigate to `http://localhost:3030/api-docs` in your browser.
 
 ## Endpoints Documented
 
