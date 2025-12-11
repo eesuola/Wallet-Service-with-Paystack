@@ -62,6 +62,9 @@ export const createApiKey = async (req: Request, res: Response) => {
 
     res.status(201).json({
       api_key: apiKey,
+      id: newApiKey.id,
+      name: newApiKey.name,
+      permissions: newApiKey.permissions,
       expires_at: expiresAt.toISOString(),
     });
   } catch (error) {
