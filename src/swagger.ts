@@ -14,11 +14,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3030",
+        url: "https://wallet-service-with-paystack.onrender.com",
         description: "Development Server",
       },
       {
-        url: "http://localhost:3031",
+        url: "https://wallet-service-with-paystack.onrender.com",
         description: "Testing Server",
       },
     ],
